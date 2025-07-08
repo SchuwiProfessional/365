@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  background: #fff9f2;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #c94f7c;
+}
+
+#cartas-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.carta {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.carta:hover {
+  transform: translateY(-5px);
+}
+
+.carta h2 {
+  margin-bottom: 10px;
+  color: #b3476d;
+}
+body.carta-individual {
+  background: #fffaf6;
+  color: #3a2c2c;
+  font-family: 'Georgia', serif;
+  padding: 40px 20px;
+  line-height: 1.6;
+}
+
+.carta-wrapper {
+  max-width: 800px;
+  margin: auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.carta-wrapper h1 {
+  color: #b3476d;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.fecha {
+  color: #888;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.firma {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 40px;
+  color: #c94f7c;
+}
+
+.inspiracion {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+}
+
+.volver {
+  display: block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #b3476d;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.volver:hover {
+  color: #922d54;
+}
