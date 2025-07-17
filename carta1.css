@@ -1,0 +1,130 @@
+/* Variables de estilo */
+:root {
+  --color-texto: #333;
+  --color-texto-suave: #666;
+  --color-borde: #e2e2e2;
+  --color-destacado: #121212;
+  --ancho-contenido: 740px;
+  --margen-movil: 20px;
+  --familia-serif: "Georgia", "Times New Roman", Times, serif;
+  --familia-sans: "Helvetica Neue", Arial, sans-serif;
+  --line-height: 1.6;
+  --espaciado-parrafo: 1.5rem;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--familia-serif);
+  color: var(--color-texto);
+  line-height: var(--line-height);
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Contenedor principal */
+.carta-individual {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.carta-wrapper {
+  max-width: var(--ancho-contenido);
+  width: 100%;
+  padding: 0 var(--margen-movil);
+}
+
+/* Encabezados */
+h1 {
+  font-family: var(--familia-sans);
+  font-weight: 300;
+  font-size: 2.2rem;
+  color: var(--color-destacado);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.fecha {
+  font-family: var(--familia-sans);
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2.5rem;
+  display: block;
+}
+
+/* Texto de la carta */
+p {
+  margin-bottom: var(--espaciado-parrafo);
+  font-size: 1.1rem;
+  text-align: justify;
+  hyphens: auto;
+  word-spacing: -0.05em;
+}
+
+p strong {
+  font-weight: normal;
+  color: var(--color-destacado);
+}
+
+/* Elementos especiales */
+.firma {
+  font-style: italic;
+  margin-top: 2.5rem;
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+.inspiracion {
+  font-family: var(--familia-serif);
+  font-size: 1rem;
+  color: var(--color-texto);
+  margin-top: var(--espaciado-parrafo);
+  border-top: 1px solid var(--color-borde);
+  padding-top: 1.5rem;
+  line-height: var(--line-height);
+  font-style: italic;
+  text-align: left;
+}
+
+.inspiracion em {
+  font-style: italic;
+  color: var(--color-destacado);
+}
+
+/* Reproductor de música */
+iframe {
+  display: block;
+  margin: 0rem 0 0 0;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Enlace de volver */
+.volver {
+  font-family: var(--familia-sans);
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+  text-decoration: none;
+  margin-top: 2rem;
+  display: inline-block;
+  border-bottom: 1px dashed var(--color-texto-suave);
+  transition: all 0.2s ease;
+}
+
+.volver:hover {
+  color: var(--color-texto);
+  border-bottom-color: var(--color-texto);
+}
