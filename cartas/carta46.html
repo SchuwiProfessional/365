@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Regalo — Carta para Tati</title>
+    <link rel="stylesheet" href="../stylesc.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1 class="titulo">
+        Carta #46 – Paseando con la diosa del 18 de septiembre por tierras
+        encantadas
+      </h1>
+
+      <!-- Caja-regalo (botón por accesibilidad) -->
+      <button
+        id="gift"
+        class="gift"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-label="Abrir regalo"
+      >
+        <span class="bow"></span>
+        <span class="box"></span>
+      </button>
+
+      <!-- Contenedor donde van apareciendo las oraciones -->
+      <section
+        id="letter"
+        class="letter"
+        aria-live="polite"
+        aria-atomic="false"
+      >
+        <p class="hint">
+          Haz click en la caja para leer tu carta, frase por frase.
+        </p>
+      </section>
+
+      <div class="controls">
+        <button id="reset" class="btn secondary">Reiniciar</button>
+        <button id="revealAll" class="btn">Mostrar todo</button>
+        <br />
+      </div>
+    </main>
+
+    <script src="../scriptc.js"></script>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+/* styles.css - minimal, romántico y limpio */
+:root {
+  --bg: #fff6f4;
+  --card: #fff;
+  --accent: #c94f7c;
+  --muted: #7a6a66;
+  --shadow: rgba(201, 79, 124, 0.18);
+  --radius: 14px;
+  --maxw: 640px;
+  --transition: 320ms cubic-bezier(0.2, 0.9, 0.25, 1);
+  --font-sans: "Raleway", Arial, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: linear-gradient(180deg, var(--bg), #fff);
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: 0 12px 30px var(--shadow);
+  text-align: center;
+  transform-origin: center;
+}
+
+/* título */
+.titulo {
+  margin: 0 0 18px;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+/* caja/ regalo (botón accesible) */
+.gift {
+  width: 160px;
+  height: 140px;
+  display: inline-grid;
+  place-items: center;
+  margin: 6px auto 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+/* la caja visual */
+.gift .box {
+  width: 120px;
+  height: 90px;
+  background: linear-gradient(180deg, #ffdfe7, #ffc8d9);
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+/* lazo (bow) */
+.gift .bow {
+  position: absolute;
+  top: 10px;
+  width: 120px;
+  height: 36px;
+  display: block;
+  background: linear-gradient(90deg, #f7a1bf, #c94f7c);
+  border-radius: 18px;
+  transform: translateY(-40%);
+  box-shadow: 0 6px 16px rgba(201, 79, 124, 0.15);
+}
+
+/* efecto al abrir */
+.gift.open .box {
+  transform: translateY(-12px) rotate(-6deg);
+}
+.gift.open .bow {
+  transform: translateY(-52%) rotate(-6deg);
+}
+
+/* contenido de la carta */
+.letter {
+  min-height: 120px;
+  margin: 18px auto 10px;
+  max-width: 560px;
+  text-align: left;
+  padding: 18px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #fff, #fff9f9);
+  border: 1px solid #f1e7e7;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03) inset;
+}
+
+/* oración nueva (aparece con animación) */
+.line {
+  font-size: 1.05rem;
+  margin: 0 0 0.9rem;
+  color: #3b3b3b;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 420ms ease, transform 420ms ease;
+  line-height: 1.5;
+  font-family: var(--font-sans);
+}
+
+/* cuando se muestra: */
+.line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* hint y nota */
+.hint {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.95rem;
+  text-align: center;
+}
+.nota {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 12px;
+}
+
+/* controles */
+.controls {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(201, 79, 124, 0.12);
+}
+.btn.secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid #f2c3d0;
+  font-weight: 600;
+}
+
+/* responsive */
+@media (max-width: 480px) {
+  .gift {
+    width: 140px;
+    height: 120px;
+  }
+  .gift .box {
+    width: 100px;
+    height: 76px;
+  }
+  .titulo {
+    font-size: 1.3rem;
+  }
+  .letter {
+    padding: 14px;
+  }
+}
