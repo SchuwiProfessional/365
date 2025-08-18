@@ -1,7 +1,9 @@
 // script.js
 // Reemplaza las líneas siguientes con las oraciones de TU carta.
-// Cada elemento del array será una "oración" que aparece con cada click.
-const lines = [".", "."];
+const lines = [
+  "“Mi nombre es Schuwi… y morí de la forma más ridícula del mundo: intentando impresionar a una chica. Lo gracioso es que, en vez de morir de verdad, terminé renaciendo en un mundo mágico… con ella. Tati, la diosa del 18 de agosto. Y así empezó la aventura más absurda y hermosa de mi vida.”",
+  "Se desbloqueara en un momento especial.",
+];
 
 const giftBtn = document.getElementById("gift");
 const letter = document.getElementById("letter");
