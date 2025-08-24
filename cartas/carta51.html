@@ -3,18 +3,156 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carta 51 – Floreciendo</title>
+    <title>Carta 51 – Especial 50+1</title>
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body class="carta-individual">
     <div class="carta-wrapper">
-      <h1>Carta #51 – Floreciendo</h1>
+      <h1>Carta #51 – Especial 50+1</h1>
       <p class="fecha">23 de agosto</p>
+      <p>
+        Hoy fue un sábado que se siente como una pequeña película de nosotros.
+        Amanecí ocupado, arreglando la PC de mi hermanito porque ya estaba más
+        lenta que tortuga, y mientras yo me metía en cables y programas, tú
+        llegaste con esa forma tuya de iluminarlo todo. Solo con estar ahí ya
+        haces que cualquier cosa se sienta menos pesada, y hoy incluso me
+        ayudaste a enjabonar mis zapatillas. Entre risas y espuma, parecía una
+        tontería, pero esas pequeñas cosas son las que hacen que te ame cada vez
+        más: porque todo, hasta lo más mínimo, es más lindo contigo.
+      </p>
 
-      <p class="firma">– Schuwi</p>
-      <p class="inspiracion">Inspirada en: <em>Árbol De Manzanas</em> – Nsqk</p>
+      <p>
+        Después, como si el sol nos estuviera buscando, nos quedamos en el
+        patio, tomando un poquito de luz, sintiendo ese calorcito compartido que
+        parecía inventado para ti y para mí. Más tarde, en la sala, pusimos
+        Comando de Criaturas, una serie de dibujos que quizás no sea la más
+        profunda, pero contigo siempre se vuelve especial. No importa qué
+        veamos, mientras estés a mi lado, todo me gusta.
+      </p>
+
+      <p>
+        Y justo cuando pensaba que ya era suficiente felicidad, mis papás nos
+        dijeron que bajemos al centro comercial. Bajamos los tres: tú, mi
+        hermanito y yo. Y qué rico fue ese rato. Comimos Popeyes con ganas,
+        caminamos entre pasillos llenos de colores en Dollarcity y terminamos
+        con un bubble tea que nos supo a regalo. Ese tipo de momentos me
+        recuerdan que no necesito nada más que tu compañía para sentirme en
+        casa, sin importar dónde estemos.
+      </p>
+
+      <p>
+        Ya de vuelta, entre mis hermanos y tú, la casa estaba llena de
+        movimiento, pero al mismo tiempo, todo giraba alrededor de nosotros.
+        Porque más tarde, cuando pudimos escaparnos un poco, nos dimos todo el
+        amor del mundo, tanto que el reloj dejó de importar. Y ahí, abrazados,
+        casi dormidos, entendí algo: no necesito una fecha especial para sentir
+        que ya estoy viviendo mi mejor regalo. Dormimos calientitos, pegados, y
+        aunque después tuviste que volver a tu casita, me quedé con esa paz tuya
+        que siempre me dejas.
+      </p>
+
+      <p>
+        Hoy escribo la carta 51, y no puedo evitar mirar atrás: son 50 cartas,
+        50 días que me propuse decirte lo que siento, y aquí estoy,
+        cumpliéndolo. Pero lo más importante no es la cantidad, sino lo que
+        significan: cada carta es una forma de recordarte que siempre quiero
+        estar ahí, que no me canso de buscarte, de amarte, de pensarte.
+      </p>
+
+      <p>
+        Tus besos me saben a azúcar, me endulzan hasta el alma. Y cada sábado
+        contigo me enseña que esta historia apenas empieza. Lo nuestro no es una
+        colección de momentos sueltos: es un camino que vamos construyendo día
+        tras día, entre risas, reconciliaciones, comidas compartidas y sueños
+        juntos. Y te juro que quiero más, muchos más sábados, domingos, mañanas,
+        tardes, noches, todo contigo.
+      </p>
+
+      <p>
+        Porque la verdad es que no importa dónde estemos o qué hagamos: si tú
+        estás, yo ya estoy en el lugar correcto. Y mientras me dejes seguir a tu
+        lado, siempre tendrás mis cartas, mis palabras, mis abrazos, mis ganas
+        infinitas de amarte.
+      </p>
+
+      <p>
+        Feliz carta número 51, amor. Que sean el inicio de muchas más, y que
+        nunca se acabe esta costumbre hermosa de vivirlo todo contigo.
+      </p>
       <br />
+      <h2>🧩 Rompecabezas especial</h2>
+      <p>Arma este pequeño rompecabezas y descubre la sorpresa ❤️</p>
+      <br />
+      <canvas
+        id="puzzle"
+        width="200"
+        height="356"
+        style="border: 1px solid #ccc"
+      ></canvas>
+      <button onclick="shuffle()">🔀 Mezclar</button>
 
+      <script>
+        const canvas = document.getElementById("puzzle");
+        const ctx = canvas.getContext("2d");
+        const rows = 3,
+          cols = 3;
+        const pieceWidth = canvas.width / cols;
+        const pieceHeight = canvas.height / rows;
+
+        const img = new Image();
+        img.src = "../img/img2.jpg"; // 🔄 Cambia esta URL por tu foto
+        let pieces = [];
+
+        img.onload = () => {
+          // Dividir imagen en piezas
+          for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+              pieces.push({ x, y, correctX: x, correctY: y });
+            }
+          }
+          shuffle();
+          draw();
+        };
+
+        function shuffle() {
+          pieces.sort(() => Math.random() - 0.5);
+          draw();
+        }
+
+        function draw() {
+          pieces.forEach((p, i) => {
+            const col = i % cols;
+            const row = Math.floor(i / cols);
+            ctx.drawImage(
+              img,
+              p.correctX * pieceWidth,
+              p.correctY * pieceHeight,
+              pieceWidth,
+              pieceHeight,
+              col * pieceWidth,
+              row * pieceHeight,
+              pieceWidth,
+              pieceHeight
+            );
+          });
+        }
+      </script>
+      <p class="firma">– Schuwi</p>
+      <p class="inspiracion">
+        Inspirada en: <em>mañana (part. Young Miko y The Marías)</em> – Tainy
+      </p>
+      <br />
+      <iframe
+        data-testid="embed-iframe"
+        style="border-radius: 12px"
+        src="https://open.spotify.com/embed/track/1BT8gWiMLQvN7oPQHS8RSR?utm_source=generator"
+        width="100%"
+        height="80"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
       <a href="../index.html" class="volver">← Volver al inicio</a>
     </div>
   </body>
